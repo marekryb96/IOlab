@@ -1,7 +1,0 @@
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\obj\Debug\Lab2.csprojResolveAssemblyReference.cache
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\obj\Debug\Lab2.csproj.CoreCompileInputs.cache
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\bin\Debug\Lab2.exe.config
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\bin\Debug\Lab2.exe
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\bin\Debug\Lab2.pdb
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\obj\Debug\Lab2.exe
-C:\Users\Rybiccy\Documents\Visual Studio 2017\Projects\Lab2\Lab2\obj\Debug\Lab2.pdb
