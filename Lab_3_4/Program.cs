@@ -1,9 +1,11 @@
-﻿using System;
+﻿using IOLaboratorium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static IOLaboratorium.ZadaniaTAP;
 
 namespace ConsoleApp1
 {
@@ -23,21 +25,23 @@ namespace ConsoleApp1
                 Console.WriteLine("end task");
             }
 
-            static void Main(string[] args)
+
+
+        static void Main(string[] args)
             {
-            /*myDelegate foo = (a, b) => a + b;
-            int r = foo(3, 4);
-            Console.WriteLine(r);
-            Console.ReadKey();*/
-            int test = 0;
-            byte[] buffer = new byte[128];
-            Console.WriteLine("begin main");
-            Task task = OperationTask(buffer);
-            Thread.Sleep(test);
-            Console.WriteLine("progress main");
-            task.Wait();
-            Console.WriteLine("end main");
-            Console.ReadKey();
-        }
+            ZadaniaTAP.Server server = new ZadaniaTAP.Server();
+            server.Run();
+
+            ZadaniaTAP.Client client1 = new ZadaniaTAP.Client();
+            ZadaniaTAP.Client client2 = new ZadaniaTAP.Client();
+
+            client1.Connect();
+            client2.Connect();
+
+            Task.WaitAll(server.ServerTask);
+            Task.WaitAll(client1.ClientTask);
+            Task.WaitAll(client2.ClientTask);
+
+            }
     }
 }

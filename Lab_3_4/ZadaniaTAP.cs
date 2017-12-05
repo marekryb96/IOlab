@@ -17,7 +17,17 @@ namespace IOLaboratorium
         #region Zadanie 1
         public struct TResultDataStructure
         {
-            //zadanie 1
+            private int a;
+            private int b;
+
+            public TResultDataStructure(int a_, int b_)
+            {
+                a = a_;
+                b = b_;
+            }
+
+            public int B { get => b; set => b = value; }
+            public int A { get => a; set => a = value; }
         }
         public Task<TResultDataStructure> AsyncMethod1(byte[] buffer)
         {
@@ -37,6 +47,8 @@ namespace IOLaboratorium
         #endregion
         #region Zadanie 2
         private bool zadanie2 = false;
+        private static object client;
+
         public bool Z2 {
             get { return zadanie2; }
             set { zadanie2 = value; }
@@ -62,7 +74,7 @@ namespace IOLaboratorium
         }
         #endregion
         #region Zadanie 4-8
-        class Server
+        public class Server
         {
             #region Variables
             TcpListener server;
@@ -171,10 +183,18 @@ namespace IOLaboratorium
             #endregion
         }
 
-        class Client
+        public class Client
         {
             #region variables
             TcpClient client;
+
+            public Client()
+            {
+            }
+            public Task ClientTask
+            {
+                get { return ClientTask; }
+            }
             #endregion
             #region properties
             #endregion
@@ -208,6 +228,16 @@ namespace IOLaboratorium
             }
             #endregion
         }
-       
+        #endregion
+
+        static async Task ClientTask()
+        {
+            #region variables
+            TcpClient client;
+            #endregion
+            client = new TcpClient();
+            client.Connect(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2048));
+
+        }
     }
 }
